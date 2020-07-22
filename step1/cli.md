@@ -8,4 +8,8 @@ npm install core-js
 npx create-react-app css-test  
 npm install classname  
 npm install node-sass  
-npm install styled-components
+npm install styled-components  
+
+
+npx create-react-app router-test  
+npm install react-router-dom
