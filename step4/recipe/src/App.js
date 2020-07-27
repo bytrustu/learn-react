@@ -7,20 +7,14 @@ import PrevState from "./PrevState";
 import UseEffectTimer, {UseReducerTimer} from "./UseReducer";
 import {RefExample1, RefExample2} from "./UseRef";
 import ReactMemo from "./ReactMemo";
+import SelectFruit from "./SelectFruit";
+import Counter1 from "./Counter1";
+
 
 function App() {
-
-    const prevProps = {
-        todos: [{ title: 'fix bug', priority: 'high'}, { title: 'meeting', priority: 'low'}]
-    }
-
-    const nextProps = {
-        todos: [{ title: 'fix bug', priority: 'high'}, { title: 'meeting', priority: 'high'}]
-    }
-
     return (
         <>
-            <ReactMemo prevProps={prevProps} nextProps={nextProps}/>
+            <Counter1/>
         </>
     )
 }
