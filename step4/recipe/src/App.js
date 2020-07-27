@@ -4,11 +4,13 @@ import './App.css';
 import DependencyEffect from "./UseEffect";
 import AsyncAwaitComponent from "./AsyncAwait";
 import PrevState from "./PrevState";
+import UseEffectTimer, {UseReducerTimer} from "./UseReducer";
 
 function App() {
     return (
         <>
-            <PrevState/>
+            <UseReducerTimer initialTotalSeconds={10000}/>
+            <UseEffectTimer initialTotalSeconds={10000}/>
         </>
     );
 }
