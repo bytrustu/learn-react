@@ -1,4 +1,6 @@
 import { createStore, combineReducers } from "redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 import timelineReducer, {
     addTimeline,
@@ -12,6 +14,7 @@ import friendReducer, {
     removeFriend,
     editFriend
 } from './friend/state';
+import TimelineMain from "./timeline/container/TimelineMain";
 
 const reducer = combineReducers({
     timeline: timelineReducer,
@@ -35,3 +38,4 @@ store.dispatch(addFriend({ id: 2, name: '수지' }));
 store.dispatch(editFriend({ id: 2, name: '조보아' }));
 store.dispatch(removeFriend({ id: 1, name: '아이유' }));
 
+ReactDOM.render(<div><TimelineMain/></div>, document.querySelector('#root'));
