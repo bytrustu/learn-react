@@ -1,5 +1,20 @@
-export class Component {
+const hooks = [];
+let currentComponent = 0;
 
+export class Component {}
+
+export function useState(initValue) {
+  const position = currentComponent;
+
+  if (!hooks[position]) {
+    hooks[position] = initValue;
+  }
+  return [
+    hooks[position],
+    (nextValue) => {
+      hooks[position] = nextValue;
+    }
+  ]
 }
 
 function renderRealDOM(vdom) {
@@ -31,11 +46,13 @@ export const render = (function() {
 })();
 
 export function createElement(tagName, props, ...children) {
+
   if (typeof tagName === 'function') {
     if (tagName.prototype instanceof Component) {
       const instance = new tagName({ ...props, children });
       return instance.render();
     } else {
+      currentComponent++;
       return tagName.apply(null, [props, ...children]);
     }
   }
